@@ -25,7 +25,7 @@ function HomePage() {
     return localStorage.getItem("jwtToken") !== null; 
   };
 
-  const url = "http://localhost:8080/auth";
+  const url = "https://mern-todo-app-api-sigma.vercel.app/auth";
   const fetchTodos = async () => {
     const token = localStorage.getItem("jwtToken");
     if (!token) {
