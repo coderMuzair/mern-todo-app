@@ -1,0 +1,65 @@
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.inner-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-div{
+  display: flex;
+  padding-left: 0;
+}
+ul{
+  padding: 1px;
+}
+.todo-div li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  width: 95vw;          
+   margin: 5px 8px;
+  padding: 10px 0;  
+  background-color: rgb(241, 255, 255);
+  
+
+}
+
+.todo-text {
+  color: rgb(1, 62, 148);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: clamp(14px, 3vw, 22px);
+  flex: 4;              
+  min-width: 100px;    
+  word-wrap: break-word;
+  padding: 0 10px 0 10px; 
+  font-weight:400;
+}
+
+.todo-time {
+  color: rgb(1, 62, 148);
+
+  flex: 3;              
+  font-size: clamp(8px, 3vw, 18px);
+  text-align: right;    
+  min-width: 80px;      
+}
+
+.todo-icons {
+  flex: 1;              
+  text-align: center;
+  min-width: 100px;     
+}
+
+.main p{
+  background-color: rgb(238, 238, 238);
+  color: rgb(1, 62, 148);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(20px, 7vw, 35px);
+  font-weight: bold;
+}
