@@ -25,7 +25,7 @@ function HomePage() {
     return localStorage.getItem("jwtToken") !== null; 
   };
 
-  const url = "http://localhost:8080/auth";
+  const url = "https://mern-todo-app-api-sigma.vercel.app/auth";
   const fetchTodos = async () => {
     const token = localStorage.getItem("jwtToken");
     if (!token) {
@@ -81,7 +81,10 @@ function HomePage() {
       console.error("No JWT token found, cannot add todo");
       return;
     }
-    try {
+    
+    setTodos([...todos, {createdAt:new Date().toISOString(),
+            text: text }])
+    try { 
       const response = await axios.post(
         `${url}/addTodo`,
         { text },

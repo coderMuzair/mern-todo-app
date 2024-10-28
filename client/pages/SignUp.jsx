@@ -18,7 +18,7 @@ const SignUp = () => {
       return handleError("All fields are required to be filled");
     }
     try {
-      const url = "http://localhost:8080/auth/signup";
+      const url = "https://mern-todo-app-api-sigma.vercel.app/auth/signup";
       const response = await axios.post(url, { name, email, password });
       if (response.data.success == true) {
         toast.success("Signup Successfully. you can login now!", {

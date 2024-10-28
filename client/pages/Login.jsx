@@ -16,7 +16,7 @@ const Login = () => {
       return handleError("Email & Password must be filled");
     }
     try {
-      const url = "http://localhost:8080/auth/login";
+      const url = "https://mern-todo-app-api-sigma.vercel.app/auth/login";
       const response = await axios.post(url, { email, password });
       console.log("response: ", response);
       if (response.data.success == true) {
