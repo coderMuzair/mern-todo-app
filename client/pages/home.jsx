@@ -81,6 +81,8 @@ function HomePage() {
       console.error("No JWT token found, cannot add todo");
       return;
     }
+     setTodos([...todos, {createdAt:new Date().toISOString(),
+            text: text }])
     try {
       const response = await axios.post(
         `${url}/addTodo`,
