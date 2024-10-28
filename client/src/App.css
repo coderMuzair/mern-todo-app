@@ -2,6 +2,7 @@ body{
   height: 97vh;
   background: rgb(2,0,36);
 background: linear-gradient(144deg, rgba(2,0,36,1) 0%, rgba(116,185,241,1) 0%, rgba(30,211,255,1) 53%, rgba(0,212,255,1) 100%);
+
 }
 .main{
   display: flex;
