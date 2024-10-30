@@ -11,7 +11,6 @@ import { toast, ToastContainer } from "react-toastify";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { format } from "date-fns";
 
-
 function HomePage() {
   const [text, setText] = useState("");
   const [todos, setTodos] = useState([]);
@@ -22,7 +21,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   const isAuthenticated = () => {
-    return localStorage.getItem("jwtToken") !== null; 
+    return localStorage.getItem("jwtToken") !== null;
   };
 
   const url = "https://mern-todo-app-api-sigma.vercel.app/auth";
@@ -36,7 +35,7 @@ function HomePage() {
     try {
       const response = await axios.get(`${url}/home`, {
         headers: {
-          Authorization: token, // Attach token in Authorization header
+          Authorization: token,
         },
       });
 
@@ -81,10 +80,10 @@ function HomePage() {
       console.error("No JWT token found, cannot add todo");
       return;
     }
-    
-    setTodos([...todos, {createdAt:new Date().toISOString(),
-            text: text }])
-    try { 
+
+    setTodos([...todos, { createdAt: new Date().toISOString(), text: text }]);
+    setText("");
+    try {
       const response = await axios.post(
         `${url}/addTodo`,
         { text },
@@ -151,6 +150,11 @@ function HomePage() {
       console.error("No JWT token found, cannot delete todo");
       return;
     }
+    const todoTodelete = todos.findIndex((v) => v._id == id);
+    const updatedTodos = [...todos];
+    updatedTodos.splice(todoTodelete, 1);
+    setTodos(updatedTodos);
+    
     try {
       const response = await axios.delete(`${url}/deleteTodo/${id}`, {
         headers: {
@@ -158,11 +162,6 @@ function HomePage() {
         },
       });
       console.log("response: ", response);
-      const todoTodelete = todos.findIndex((v) => v._id == id);
-      console.log("todoTodelete: ", todoTodelete);
-      const updatedTodos = [...todos];
-      updatedTodos.splice(todoTodelete, 1);
-      setTodos(updatedTodos);
       fetchTodos();
     } catch (error) {
       console.log("error: ", error);
@@ -176,7 +175,10 @@ function HomePage() {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+    <div className="homeContainer">
+
+  
+      <div  style={{ display: "flex", justifyContent: "flex-end", padding: "10px"}}>
         <LogoutIcon onClick={handleLogout} fontSize="large" />
       </div>
       <div className="main">
@@ -219,6 +221,7 @@ function HomePage() {
           </ul>
         </div>
         <ToastContainer />
+      </div>
       </div>
     </>
   );

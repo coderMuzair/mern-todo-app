@@ -1,8 +1,12 @@
-body{
-  height: 97vh;
-  background: rgb(2,0,36);
-background: linear-gradient(144deg, rgba(2,0,36,1) 0%, rgba(116,185,241,1) 0%, rgba(30,211,255,1) 53%, rgba(0,212,255,1) 100%);
+html, body{
+  margin: 0;
+  padding: 0;
 
+}
+.homeContainer{
+  height: 100vh;
+  overflow:auto;
+  background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
 }
 .main{
   display: flex;
@@ -65,9 +69,7 @@ ul{
 }
 
 .main p{
-  /* background-color: rgb(238, 238, 238); */
-  color: rgb(1, 45, 108);
-
+  color: #002963;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: clamp(20px, 7vw, 35px);
   font-weight: bold;

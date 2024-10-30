@@ -5,6 +5,7 @@ import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import { handleError } from "../src/utils";
 import { ToastContainer, toast } from "react-toastify";
+import "../src/loginSignup.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");

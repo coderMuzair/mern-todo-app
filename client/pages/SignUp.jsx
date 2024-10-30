@@ -6,6 +6,8 @@ import { handleSuccess, handleError } from "../src/utils.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import "../src/loginSignup.css"
+
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -43,7 +45,8 @@ const SignUp = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
+    // <div style={{ background: "black" }}>
+    <div style={{ textAlign: "center", padding: "50px",  }}>
       <h1>Sign Up</h1>
       <div style={{ maxWidth: "300px", margin: "0 auto" }}>
         <TextField
@@ -90,6 +93,7 @@ const SignUp = () => {
       </Button>
       <ToastContainer />
     </div>
+    // </div>
   );
 };
 
