@@ -39,6 +39,7 @@ const Login = () => {
     navigate("/signup");
   };
 
+  
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
       <h1>Login</h1>

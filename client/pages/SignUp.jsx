@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "../src/loginSignup.css"
 
-
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

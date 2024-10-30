@@ -59,6 +59,7 @@ function HomePage() {
     setText(e.target.value);
     setError(false);
   };
+  
 
   const handleAddButton = async () => {
     if (!updateBtn) {
