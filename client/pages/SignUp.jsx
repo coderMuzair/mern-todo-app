@@ -6,7 +6,6 @@ import { handleSuccess, handleError } from "../src/utils.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "../src/loginSignup.css"
 
 const SignUp = () => {
   const [name, setName] = useState("");
